@@ -1,6 +1,6 @@
 run('../Aula 3/prep_aula3.m');
 
-# análise quando as chaves 2 e 3 estão fechadas
+% análise quando as chaves 2 e 3 estão fechadas
 printf("Carga Equivalente em Potência Complexa: %s\n", num2str(S23));
 fp23 = real(S23) / abs(S23);
 printf("Fator de Potência (Atrasada): %f\n", fp23);

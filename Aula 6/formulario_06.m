@@ -1,6 +1,6 @@
-# Dados da Questão: Motor A = Linha 10 | Motor B: Linha 5 | Vn = 220
+% Dados da Questão: Motor A = Linha 10 | Motor B: Linha 5 | Vn = 220
 
-# primeira questão
+% primeira questão
 Pmec50A = (0.50)*2206.5;
 Rend50A = 0.77;
 Pele50A = Pmec50A/Rend50A;
@@ -32,7 +32,7 @@ printf('Motor A | Rendimento: 0.50 | Potência Reativa = %f [Var] \n', Q50A);
 printf('Motor A | Rendimento: 0.75 | Potência Reativa = %f [Var] \n', Q75A);
 printf('Motor A | Rendimento: 0.100 | Potência Reativa = %f [Var] \n', Q100A);
 
-# segunda questão
+% segunda questão
 fp50A_ = 0.95;
 modS50A_ = Pele50A/fp50A_;
 Q50A_ = sqrt(modS50A_^2 - Pele50A^2);
@@ -49,7 +49,7 @@ printf('Valor do Capacitor para Correção de Potência: %f [F] \n', C);
 printf('Potência Reativa Antes da Correção de Potência: %f [Var] \n', Q50A);
 printf('Potência Reativa Depois da Correção de Potência: %f [Var] \n', Q50A_);
 
-# terceira questão
+% terceira questão
 Pmec50B = (0.50)*551.625;
 Rend50B = 0.50;
 Pele50B = Pmec50B/Rend50B;
@@ -82,7 +82,7 @@ printf('Motor B | Rendimento: 0.50 | Potência Reativa = %f [Var] \n', Q50B);
 printf('Motor B | Rendimento: 0.75 | Potência Reativa = %f [Var] \n', Q75B);
 printf('Motor B | Rendimento: 0.100 | Potência Reativa = %f [Var] \n', Q100B);
 
-# quarta questão
+% quarta questão
 function calcula_fator_pot (SA, SB, Qcap)
   S = SA + SB; P = real(S); Q = imag(S);
   Q_ = Q - Qcap; S_ = P + j*(Q_);
@@ -92,11 +92,11 @@ function calcula_fator_pot (SA, SB, Qcap)
   printf('Fator de Potência com o capacitor = %f F \n', fp_cc);
 endfunction
 
-# quinta questão
-# maior valor: Motor A: 100% | Motor B: 0%
-# menor valor: Motor A: 50% | Motor b: 50%
+% quinta questão
+% maior valor: Motor A: 100% | Motor B: 0%
+% menor valor: Motor A: 50% | Motor b: 50%
 
-# calculo para o caso do menor valor de fp
+% calculo para o caso do menor valor de fp
 S = S50A + S50B; P = real(S); Q = imag(S);
 Q_ = Q - QcA;
 
@@ -107,7 +107,7 @@ plot([0 Pele100A], [0 0], [Pele100A Pele100A], ...
      [0 Q_], [0 P], [0 Q_]); grid on;
 title('[Maior Valor: Motor A: 100% | Motor B: 0%] [Menor Valor: Motor A: 50% | Motor B: 50%]');
 
-# sexta questão
+% sexta questão
 
 function p = pot_ativa (SA, SB)
   S = SA + SB;
